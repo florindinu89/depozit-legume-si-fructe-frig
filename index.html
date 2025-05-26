@@ -67,19 +67,34 @@
       margin-left: 0;
       padding: 60px 20px;
       flex: 1;
+      text-align: center;
     }
     .menu-visible {
       display: flex;
     }
-    .back-button {
-      display: inline-block;
-      margin-top: 20px;
-      background-color: #007BFF;
+    .cta-buttons a {
+      background-color: #28a745;
       color: white;
-      padding: 10px 20px;
+      padding: 15px 30px;
+      margin: 20px;
       text-decoration: none;
       border-radius: 5px;
+      font-size: 18px;
       font-weight: bold;
+      display: inline-block;
+    }
+    .hero-image {
+      background-image: url('https://depozitcongelate.ro/wp-content/uploads/2019/01/depozite-frigorifice-6.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      margin-bottom: 40px;
+    }
+    iframe {
+      border: 0;
+      width: 100%;
+      height: 400px;
+      margin-top: 40px;
     }
     @media (min-width: 768px) {
       nav {
@@ -111,7 +126,14 @@
     </ul>
   </nav>
 
-  <main><h1>Acasa</h1></main>
+  <main>
+    <div class="hero-image"></div>
+    <div class="cta-buttons">
+      <a href="inchiriere.html">Închiriază spațiu</a>
+      <a href="fructe.html">Cumpără legume și fructe</a>
+    </div>
+    <iframe src="https://www.google.com/maps?q=Calea+Floreasca+nr+2+București&output=embed" allowfullscreen></iframe>
+  </main>
 
   <script>
     function toggleMenu() {
