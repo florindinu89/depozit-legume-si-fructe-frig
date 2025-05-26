@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inchiriere Spatii Frigorifice</title>
   <style>
     body {
@@ -51,22 +51,29 @@
       font-weight: bold;
       border-radius: 5px;
     }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #007BFF;
+      padding: 10px;
+      position: relative;
+      z-index: 1001;
+    }
+    .logo {
+      height: 40px;
+    }
     main {
       margin-left: 0;
       padding: 60px 20px;
       flex: 1;
     }
-    h1 {
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-    }
     .menu-visible {
       display: flex;
     }
     .back-button {
-      margin-top: 20px;
       display: inline-block;
+      margin-top: 20px;
       background-color: #007BFF;
       color: white;
       padding: 10px 20px;
@@ -88,8 +95,10 @@
   </style>
 </head>
 <body>
-
-  <button class="menu-toggle" onclick="toggleMenu()">☰ Meniu</button>
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Meniu</button>
+    <a href="index.html"><img src="https://tse3.mm.bing.net/th/id/OIP.SQihZgrzaXwYsN2e-v63igHaHj?pid=Api" alt="Logo" class="logo" /></a>
+  </header>
 
   <nav id="sidebar">
     <ul>
@@ -102,10 +111,7 @@
     </ul>
   </nav>
 
-  <main>
-    <h1>Inchiriere Spatii Frigorifice</h1>
-    <a href="index.html" class="back-button">← Înapoi la Acasă</a>
-  </main>
+  <main><h1>Inchiriere Spatii Frigorifice</h1><a href="index.html" class="back-button">← Înapoi la Acasă</a></main>
 
   <script>
     function toggleMenu() {
