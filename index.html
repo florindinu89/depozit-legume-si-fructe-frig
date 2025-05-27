@@ -1,170 +1,86 @@
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acasă / Home</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .menu-toggle {
-      background: #007BFF;
-      border: none;
-      color: white;
-      font-size: 24px;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    nav {
-      background-color: #007BFF;
-      width: 220px;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      height: calc(100% - 60px);
-      padding-top: 20px;
-      display: none;
-      flex-direction: column;
-      z-index: 1000;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    nav ul li {
-      padding: 15px;
-    }
-    nav ul li a {
-      background: black;
-      padding: 10px;
-      display: block;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #007BFF;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1001;
-    }
-    .logo {
-      height: 80px;
-    }
-    .language-switcher {
-      font-weight: bold;
-    }
-    .language-switcher select {
-      padding: 5px;
-      font-size: 14px;
-    }
-    main {
-      margin-left: 0;
-      padding: 60px 20px;
-      flex: 1;
-      text-align: center;
-    }
-    .menu-visible {
-      display: flex;
-    }
-    .cta-buttons a {
-      background-color: #28a745;
-      color: white;
-      padding: 15px 30px;
-      margin: 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 18px;
-      font-weight: bold;
-      display: inline-block;
-    }
-    .hero-image {
-      background-image: url('https://depozitcongelate.ro/wp-content/uploads/2019/01/depozite-frigorifice-6.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 400px;
-      margin-bottom: 40px;
-    }
-    iframe {
-      border: 0;
-      width: 100%;
-      height: 400px;
-      margin-top: 40px;
-    }
-    .ro, .en {
-      display: none;
-    }
-    @media (min-width: 768px) {
-      nav {
-        display: flex;
-      }
-      .menu-toggle {
-        display: none;
-      }
-      main {
-        margin-left: 220px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>BioIncubator Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }}
+        body {{
+            display: flex;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }}
+        .sidebar {{
+            background-color: #2196F3; /* albastru */
+            width: 250px;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }}
+        .sidebar img {{
+            width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+        }}
+        .sidebar a {{
+            display: block;
+            background-color: black;
+            color: white;
+            padding: 12px 20px;
+            margin: 10px 0;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }}
+        .main {{
+            flex-grow: 1;
+            background-color: #f4f4f4;
+        }}
+        .topbar {{
+            background-color: #2196F3;
+            color: white;
+            padding: 10px;
+            text-align: right;
+            padding-right: 20px;
+        }}
+        .hero {{
+            width: 100%;
+        }}
+        .hero img {{
+            width: 100%;
+            height: auto;
+            display: block;
+        }}
+    </style>
 </head>
 <body>
-  <header>
-    <div style="display: flex; align-items: center;">
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      <a href="index.html"><img src="https://tse3.mm.bing.net/th/id/OIP.SQihZgrzaXwYsN2e-v63igHaHj?pid=Api" alt="Logo" class="logo" /></a>
+
+    <div class="sidebar">
+        <img src="A_flat_vector_digital_illustration_features_a_chee.png" alt="Logo Fermier">
+        <a href="#">Acasa</a>
+        <a href="#">Inchiriere Spatii</a>
+        <a href="#">Legume</a>
+        <a href="#">Fructe</a>
+        <a href="#">Despre Noi</a>
+        <a href="#">Contact</a>
     </div>
-    <div class="language-switcher">
-      <select onchange="setLanguage(this.value)">
-        <option value="ro">🇷🇴 RO</option>
-        <option value="en">🇬🇧 EN</option>
-      </select>
+
+    <div class="main">
+        <div class="topbar">
+            🇷🇴 RO
+        </div>
+        <div class="hero">
+            <img src="Foto-1-site.webp" alt="Imagine planta homepage">
+        </div>
     </div>
-  </header>
 
-  <nav id="sidebar">
-    <ul>
-      <li><a href="index.html"><span class="ro">Acasa</span><span class="en">Home</span></a></li>
-      <li><a href="inchiriere.html"><span class="ro">Inchiriere Spatii</span><span class="en">Rent Storage</span></a></li>
-      <li><a href="legume.html"><span class="ro">Legume</span><span class="en">Vegetables</span></a></li>
-      <li><a href="fructe.html"><span class="ro">Fructe</span><span class="en">Fruits</span></a></li>
-      <li><a href="despre-noi.html"><span class="ro">Despre Noi</span><span class="en">About Us</span></a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <div class="hero-image"></div>
-    <div class="cta-buttons">
-      <a href="inchiriere.html"><span class="ro">Închiriază spațiu</span><span class="en">Rent Storage</span></a>
-      <a href="fructe.html"><span class="ro">Cumpără legume și fructe</span><span class="en">Buy Fruits & Vegetables</span></a>
-    </div>
-    <iframe src="https://www.google.com/maps?q=Calea+Floreasca+nr+2+București&output=embed" allowfullscreen></iframe>
-  </main>
-
-  <script>
-    function toggleMenu() {
-      var sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('menu-visible');
-    }
-
-    function setLanguage(lang) {
-      document.querySelectorAll('.ro').forEach(el => el.style.display = lang === 'ro' ? 'inline' : 'none');
-      document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? 'inline' : 'none');
-    }
-
-    setLanguage('ro');
-  </script>
 </body>
 </html>
