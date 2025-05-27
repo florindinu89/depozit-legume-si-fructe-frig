@@ -1,123 +1,103 @@
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fructe de Vanzare</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fructe - Depozit Legume și Fructe Frig</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      margin: 0;
+    body {{
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      grid-template-rows: 60px auto 300px;
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
       min-height: 100vh;
-    }
-    .menu-toggle {
-      background: #007BFF;
-      border: none;
-      color: white;
-      font-size: 24px;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-weight: bold;
-      text-align: left;
-    }
-    nav {
-      background-color: #007BFF;
-      width: 220px;
-      position: fixed;
-      top: 50px;
-      left: 0;
-      height: 100%;
-      padding-top: 20px;
-      display: none;
+    }}
+    .sidebar {{
+      grid-row: 1 / 4;
+      background: #2196F3;
+      padding: 20px 10px;
+      display: flex;
       flex-direction: column;
-      z-index: 1000;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    nav ul li {
-      padding: 15px;
-    }
-    nav ul li a {
-      background: black;
-      padding: 10px;
-      display: block;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      background: #007BFF;
-      padding: 10px;
-      position: relative;
-      z-index: 1001;
-    }
-    .logo {
-      height: 40px;
-    }
-    main {
-      margin-left: 0;
-      padding: 60px 20px;
-      flex: 1;
-    }
-    .menu-visible {
-      display: flex;
-    }
-    .back-button {
-      display: inline-block;
-      margin-top: 20px;
-      background-color: #007BFF;
+    }}
+    .sidebar img {{
+      width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+    }}
+    .sidebar a {{
+      display: block;
+      background: black;
       color: white;
-      padding: 10px 20px;
+      padding: 10px 15px;
+      margin: 6px 0;
+      text-align: center;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 4px;
       font-weight: bold;
-    }
-    @media (min-width: 768px) {
-      nav {
-        display: flex;
-      }
-      .menu-toggle {
-        display: none;
-      }
-      main {
-        margin-left: 220px;
-      }
-    }
+      width: 100%;
+    }}
+    .header {{
+      grid-column: 2;
+      background: #2196F3;
+      color: white;
+      padding: 15px;
+      text-align: right;
+    }}
+    .hero {{
+      grid-column: 2;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }}
+    .hero img {{
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    }}
+    .map {{
+      grid-column: 2;
+      padding: 0;
+      border-top: 2px solid #ccc;
+    }}
+    iframe {{
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }}
   </style>
 </head>
 <body>
-  <header>
-    <button class="menu-toggle" onclick="toggleMenu()">☰ Meniu</button>
-    <a href="index.html"><img src="https://tse3.mm.bing.net/th/id/OIP.SQihZgrzaXwYsN2e-v63igHaHj?pid=Api" alt="Logo" class="logo" /></a>
-  </header>
 
-  <nav id="sidebar">
-    <ul>
-      <li><a href="index.html">Acasa</a></li>
-      <li><a href="inchiriere.html">Inchiriere Spatii Frigorifice</a></li>
-      <li><a href="legume.html">Legume de Vanzare</a></li>
-      <li><a href="fructe.html">Fructe de Vanzare</a></li>
-      <li><a href="despre-noi.html">Despre Noi</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <div class="sidebar">
+    <img src="assets/img/logo-fermier.png" alt="Logo Fermier">
+    <a href="fructe.html">Fructe</a>
+    <a href="#">Închiriere Spații</a>
+    <a href="#">Legume</a>
+    <a href="fructe.html">Fructe</a>
+    <a href="#">Despre Noi</a>
+    <a href="#">Contact</a>
+  </div>
 
-  <main><h1>Fructe de Vanzare</h1><a href="index.html" class="back-button">← Înapoi la Acasă</a></main>
+  <div class="header">🇷🇴 RO</div>
 
-  <script>
-    function toggleMenu() {
-      var sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('menu-visible');
-    }
-  </script>
+  <div class="hero">
+    <img src="assets/img/planta.webp" alt="Imagine principală">
+  </div>
+
+  <div class="map">
+    <iframe 
+      src="https://maps.google.com/maps?q=Buzău%2C%20Strada%20Unirii%2023&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
 </body>
 </html>
