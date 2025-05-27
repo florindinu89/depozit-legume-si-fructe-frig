@@ -1,170 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acasă / Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Depozit Legume și Fructe Frig</title>
   <style>
-    body {
+    * {{
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .menu-toggle {
-      background: #007BFF;
-      border: none;
-      color: white;
-      font-size: 24px;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    nav {
-      background-color: #007BFF;
-      width: 220px;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      height: calc(100% - 60px);
-      padding-top: 20px;
-      display: none;
-      flex-direction: column;
-      z-index: 1000;
-    }
-    nav ul {
-      list-style: none;
       padding: 0;
-      margin: 0;
-    }
-    nav ul li {
-      padding: 15px;
-    }
-    nav ul li a {
-      background: black;
-      padding: 10px;
-      display: block;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-    header {
+    }}
+    body {{
+      font-family: Arial, sans-serif;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      grid-template-rows: auto 1fr;
+      min-height: 100vh;
+    }}
+    .sidebar {{
+      background-color: #2196f3;
+      grid-row: 1 / 3;
+      padding: 20px 10px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      background: #007BFF;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1001;
-    }
-    .logo {
-      height: 80px;
-    }
-    .language-switcher {
-      font-weight: bold;
-    }
-    .language-switcher select {
-      padding: 5px;
-      font-size: 14px;
-    }
-    main {
-      margin-left: 0;
-      padding: 60px 20px;
-      flex: 1;
-      text-align: center;
-    }
-    .menu-visible {
-      display: flex;
-    }
-    .cta-buttons a {
-      background-color: #28a745;
+    }}
+    .sidebar img {{
+      width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+    }}
+    .sidebar a {{
+      background-color: black;
       color: white;
-      padding: 15px 30px;
-      margin: 20px;
       text-decoration: none;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: block;
+      text-align: center;
       border-radius: 5px;
-      font-size: 18px;
       font-weight: bold;
-      display: inline-block;
-    }
-    .hero-image {
-      background-image: url('https://depozitcongelate.ro/wp-content/uploads/2019/01/depozite-frigorifice-6.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 400px;
-      margin-bottom: 40px;
-    }
-    iframe {
-      border: 0;
+    }}
+    .topbar {{
+      background-color: #2196f3;
+      color: white;
+      padding: 10px;
+      text-align: right;
+      padding-right: 20px;
+    }}
+    .hero {{
       width: 100%;
-      height: 400px;
-      margin-top: 40px;
-    }
-    .ro, .en {
-      display: none;
-    }
-    @media (min-width: 768px) {
-      nav {
-        display: flex;
-      }
-      .menu-toggle {
-        display: none;
-      }
-      main {
-        margin-left: 220px;
-      }
-    }
+      height: auto;
+    }}
+    .hero img {{
+      width: 100%;
+      height: auto;
+      display: block;
+    }}
   </style>
 </head>
 <body>
-  <header>
-    <div style="display: flex; align-items: center;">
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      <a href="index.html"><img src="https://tse3.mm.bing.net/th/id/OIP.SQihZgrzaXwYsN2e-v63igHaHj?pid=Api" alt="Logo" class="logo" /></a>
-    </div>
-    <div class="language-switcher">
-      <select onchange="setLanguage(this.value)">
-        <option value="ro">🇷🇴 RO</option>
-        <option value="en">🇬🇧 EN</option>
-      </select>
-    </div>
-  </header>
 
-  <nav id="sidebar">
-    <ul>
-      <li><a href="index.html"><span class="ro">Acasa</span><span class="en">Home</span></a></li>
-      <li><a href="inchiriere.html"><span class="ro">Inchiriere Spatii</span><span class="en">Rent Storage</span></a></li>
-      <li><a href="legume.html"><span class="ro">Legume</span><span class="en">Vegetables</span></a></li>
-      <li><a href="fructe.html"><span class="ro">Fructe</span><span class="en">Fruits</span></a></li>
-      <li><a href="despre-noi.html"><span class="ro">Despre Noi</span><span class="en">About Us</span></a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <div class="sidebar">
+    <img src="assets/img/logo-fermier.png" alt="Logo">
+    <a href="#">Acasa</a>
+    <a href="#">Inchiriere Spatii</a>
+    <a href="#">Legume</a>
+    <a href="#">Fructe</a>
+    <a href="#">Despre Noi</a>
+    <a href="#">Contact</a>
+  </div>
 
-  <main>
-    <div class="hero-image"></div>
-    <div class="cta-buttons">
-      <a href="inchiriere.html"><span class="ro">Închiriază spațiu</span><span class="en">Rent Storage</span></a>
-      <a href="fructe.html"><span class="ro">Cumpără legume și fructe</span><span class="en">Buy Fruits & Vegetables</span></a>
-    </div>
-    <iframe src="https://www.google.com/maps?q=Calea+Floreasca+nr+2+București&output=embed" allowfullscreen></iframe>
-  </main>
+  <div class="topbar">
+    🇷🇴 RO
+  </div>
 
-  <script>
-    function toggleMenu() {
-      var sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('menu-visible');
-    }
+  <div class="hero">
+    <img src="assets/img/planta.webp" alt="Imagine planta">
+  </div>
 
-    function setLanguage(lang) {
-      document.querySelectorAll('.ro').forEach(el => el.style.display = lang === 'ro' ? 'inline' : 'none');
-      document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? 'inline' : 'none');
-    }
-
-    setLanguage('ro');
-  </script>
 </body>
 </html>
