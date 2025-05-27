@@ -2,82 +2,118 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Depozit Legume și Fructe Frig</title>
   <style>
-    * {{
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }}
-    body {{
-      font-family: Arial, sans-serif;
+    }
+
+    body {
       display: grid;
       grid-template-columns: 250px 1fr;
-      grid-template-rows: auto 1fr;
+      grid-template-rows: 60px 1fr;
       min-height: 100vh;
-    }}
-    .sidebar {{
-      background-color: #2196f3;
+      font-family: Arial, sans-serif;
+    }
+
+    .sidebar {
       grid-row: 1 / 3;
+      background-color: #2196F3;
       padding: 20px 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
-    }}
-    .sidebar img {{
-      width: 100px;
+    }
+
+    .sidebar img {
+      width: 80px;
       height: auto;
       margin-bottom: 20px;
-    }}
-    .sidebar a {{
+    }
+
+    .sidebar a {
+      display: block;
       background-color: black;
       color: white;
-      text-decoration: none;
       padding: 12px 20px;
       margin: 8px 0;
-      display: block;
       text-align: center;
-      border-radius: 5px;
+      text-decoration: none;
       font-weight: bold;
-    }}
-    .topbar {{
-      background-color: #2196f3;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    .header {
+      grid-column: 2;
+      background-color: #2196F3;
       color: white;
-      padding: 10px;
+      padding: 15px;
       text-align: right;
-      padding-right: 20px;
-    }}
-    .hero {{
+      font-size: 18px;
+    }
+
+    .hero {
+      grid-column: 2;
+      background-color: #f4f4f4;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero img {
       width: 100%;
+      max-width: 900px;
       height: auto;
-    }}
-    .hero img {{
-      width: 100%;
-      height: auto;
-      display: block;
-    }}
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        display: block;
+      }
+      .sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .sidebar a {
+        margin: 5px;
+        padding: 10px;
+      }
+      .header {
+        text-align: center;
+      }
+      .hero {
+        padding: 10px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="sidebar">
-    <img src="assets/img/logo-fermier.png" alt="Logo">
-    <a href="#">Acasa</a>
-    <a href="#">Inchiriere Spatii</a>
+    <img src="assets/img/logo-fermier.png" alt="Logo Fermier">
+    <a href="#">Acasă</a>
+    <a href="#">Închiriere Spații</a>
     <a href="#">Legume</a>
-    <a href="#">Fructe</a>
+    <a href="fructe.html">Fructe</a>
     <a href="#">Despre Noi</a>
     <a href="#">Contact</a>
   </div>
 
-  <div class="topbar">
+  <div class="header">
     🇷🇴 RO
   </div>
 
   <div class="hero">
-    <img src="assets/img/planta.webp" alt="Imagine planta">
+    <img src="assets/img/planta.webp" alt="Imagine principală">
   </div>
 
 </body>
